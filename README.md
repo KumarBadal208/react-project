@@ -32,3 +32,5 @@
 
 ###### browserslist -> for compatible for version you want to support your app -> "last 2 versions"
 
+##### scripts in package.json file is to execute the package like the following commands:-
+* "start" : "parcel index.html" = npx parcel index.html -> it will dev build the app
