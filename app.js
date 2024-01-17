@@ -18,7 +18,7 @@ root.render(heading); // render function takes the heading object and converts i
 let parent = React.createElement("div",{"id": "parent"},
     React.createElement("div", {"id" : "child"}, [
         React.createElement("h1", {}, "I am nested h1 heading"),
-        React.createElement("h2", {}, "I am nested h2 heading") // array of children
+        React.createElement("h2", {className: "head"}, "I am nested h2 heading") // array of children
     ]));
 
 console.log(parent);
