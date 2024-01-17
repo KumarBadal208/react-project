@@ -1,5 +1,8 @@
 // --------****** REACT ----------------------------------------------------------------**************
 
+import React from "react";
+import ReactDOM from "react-dom";
+
 // -------** BASIC ****----------------
 
 let heading = React.createElement("h1", {
