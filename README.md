@@ -23,12 +23,12 @@
  * build the app very quickly
  * bundles in very concise manner. - minimise, compress
  * maintain the cache.
- * HMR = hot bundle replacement
+ * HMR = hot Module replacement - update the modules in the browser at runtime without needing a whole page refresh.
  * file watching algo - written in c++
  * differntial building
  * Tree shaking
  * Different dev and prod builds - prod builds are more concise.
  * for prod build - npx parcel build index.html
 
-###### browserslist -> for compatible for version you want to support your app
-* last 2 versions
+###### browserslist -> for compatible for version you want to support your app -> "last 2 versions"
+
