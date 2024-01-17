@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/KumarBadal208/react-project/issues"
   },
-  "homepage": "https://github.com/KumarBadal208/react-project#readme"
+  "homepage": "https://github.com/KumarBadal208/react-project#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
 }
