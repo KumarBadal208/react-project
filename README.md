@@ -34,3 +34,10 @@
 
 ##### scripts in package.json file is to execute the package like the following commands:-
 * "start" : "parcel index.html" = npx parcel index.html -> it will dev build the app
+
+### JSX and React Component
+* JSX is html like syntax used to create react element in react. In JSX we can write JS code as well inside "{ console.log("hello") }".
+* React Component is JS function which returns JSX code or react Element.
+* JSX (React Element) -> JS Obj -> HTML Template (while rendering).
+* Parcel is the manager of Babel. It contaims the Babel that helps to convert the JSX into react element and then into JS object.
+* Babel transpile the JSX into JS object. Babel is compiler. The JSX is not understood by JS engine. So, Babel converts the JSX first into JS code and then feed it to the browser after build.

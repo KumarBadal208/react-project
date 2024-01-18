@@ -24,6 +24,18 @@ let parent = React.createElement("div",{"id": "parent"},
         React.createElement("h2", {className: "head"}, "I am nested h2 heading") // array of children
     ]));
 
+// JSX
+const elementJSX = <p>hello there JSX</p>;
+
+// component - JS function return JSX or react element
+const component = ()=>{
+    return (
+        <div>
+            <p>hello there from component</p>
+        </div>
+    )
+}
+
 console.log(parent);
 
 root.render(parent);

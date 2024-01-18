@@ -1,3 +1,15 @@
 .head {
     background-color: pink;
 }
+
+.component{
+    background-color: aliceblue;
+}
+
+.component__image{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    color: blue;
+    background-image: url("image/rmt.svg");
+}
