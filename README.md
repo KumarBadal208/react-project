@@ -37,7 +37,35 @@
 
 ### JSX and React Component
 * JSX is html like syntax used to create react element in react. In JSX we can write JS code as well inside "{ console.log("hello") }".
-* React Component is JS function which returns JSX code or react Element.
+* React Component is JS function which returns JSX code or react Element. It is two type - Functional Component and Class based component.
 * JSX (React Element) -> JS Obj -> HTML Template (while rendering).
 * Parcel is the manager of Babel. It contaims the Babel that helps to convert the JSX into react element and then into JS object.
 * Babel transpile the JSX into JS object. Babel is compiler. The JSX is not understood by JS engine. So, Babel converts the JSX first into JS code and then feed it to the browser after build.
+
+## Project (Practise)
+* header , Body, Footer
+* header -> Logo, home,cart, profile
+* body - filter(on some rating>4), restaurant cards
+* foter - license,contact, support
+
+#### props
+* it is variable passed as argument to functional component (just like normal function in js).
+
+#### Imp Points to be Noted
+* For loop use map,filter and reduce .
+* Unique key should be provide to child component to identify the child. Help in optimisation. If not given no error will come ony warning will come but performance will be effeceted. If not given parent will render the whole child component on any modification thus affecting the performance.
+* not using key <<< index as key <<< using unique value for key.
+
+#### Import and Export
+* export default and export named 
+
+## Hooks
+* useState
+* useEffect
+
+### useState
+* To sync the data with UI , we use state variable.
+* It uses Reconciliation algo(React Fiber). Diff algo.
+* Virtual DOM - the representation of actual DOM. In react , we represent it using object(react element).
+* Diff algo use the Virtual DOM to compare the diffrence. Its more faster than comparing the actual DOM thus making rendering the page more faster when data is changed. 
+* When there is some change in the useState variable, diff algo calculates the difference and rerenders the component fastly.
