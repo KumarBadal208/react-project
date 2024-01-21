@@ -60,6 +60,8 @@
 * export default and export named 
 
 ## Hooks
+* It is utility function provided by React to interact with data and UI layer.
+* Main two types - 
 * useState
 * useEffect
 
@@ -69,3 +71,17 @@
 * Virtual DOM - the representation of actual DOM. In react , we represent it using object(react element).
 * Diff algo use the Virtual DOM to compare the diffrence. Its more faster than comparing the actual DOM thus making rendering the page more faster when data is changed. 
 * When there is some change in the useState variable, diff algo calculates the difference and rerenders the component fastly.
+
+### useEffect
+* It is React hook that get called when the component renderes itself.
+* It take one callback function and one dependencies parameter.
+* Three things to remember :-
+1. When called with no dependencies parameter -> called evertime when component renders
+2. When called with [] dependencies (empty) -> called only in starting rendering
+3. When called with [searchText] -> called when there is some change in searchText variable and component re-renders.
+
+###### CORS POLICY (Cross-Origin Resource Sharing)
+* it is a standard that allows a sever to relax the same-origin policy.
+* It allow some cross-origin request while rejecting others.
+* Use corsproxy or some extensions to resolve this error.
+
