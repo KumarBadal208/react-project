@@ -86,3 +86,15 @@
 * Use corsproxy or some extensions to resolve this error.
 
 ### Routing
+* createBrowserRouter -> helps to create the route
+* RouterProvider -> helps to use the route created in our component.
+* route.render(<RouteProvider router={appRouter}/>)
+* errorElement - Use to create errorElement component in route if route path is not defined in the route configuration.
+* useRouteError - it is used to get the error message given by the React. (hook)
+* Children Routes - used to give children route. 
+* <Outlet/> - used to give children route to component.
+* Link - Used as anchor tag to route to specific path but it does not refresh the page only change the route path and load the specific component which is present at that particular route.
+* Two type of Client-Side and Server-side
+* React implement Client-side routing as it does not refresh the page and just load the specific component. Thats why is is **Single-Page Application**.
+* Dynamic Route - path: "/restaurant/:id" -> here using id specific page is load. and id is passed as parameter to route.
+* useParams() - Used to get the params passed in the dynamic route.
