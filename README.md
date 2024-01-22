@@ -1,21 +1,20 @@
 # React Project
 
 * to use react in our project, we can use the cdn link or using npm
-* using npm install parcel also. It helps in bundling and building our app. Install it in dev-depnedencies.
+* using **npm install -D parcel** install parcel. It helps in bundling and building our app. Install it in dev-depnedencies.
 * no need to push the node_modules file as we have their configuration in our package.json file. So,  just keep the node_modules in gitignore file.
 * node_modules install all the dependencies required to execute a particular package. 
     So, its size is   very big and should not to be pushed in github. In production,
-    using package and package-lock.json file server can again install all the dependencies 
+    using package and package-lock.json file, server can again install all the dependencies 
     required to execute the package.
-* npx parcel index.html - build the app . bundled it .
-* npx executes the pacel.
+* **npx parcel index.html** - build the app . bundled it.
+* **npx parcel build index.html** - build the production ready app.
+* npx executes the npm package.
 
 ## when adding react and react dom using npm , we need to remember few things:-
  1. <script type="module" src="app.js"></script>
     here type="module" inform the browser that this app.js file is not some ordinary js file but it contains the import as well.
-
  2. import React and ReactDOM in js file.
-
  3. Delete the cdn link from html file.
 
  #### Parcel advantages 
@@ -37,7 +36,7 @@
 
 ### JSX and React Component
 * JSX is html like syntax used to create react element in react. In JSX we can write JS code as well inside "{ console.log("hello") }".
-* React Component is JS function which returns JSX code or react Element. It is two type - Functional Component and Class based component.
+* React Component is JS function which returns JSX code or react Element. It is of two type - Functional Component and Class based component.
 * JSX (React Element) -> JS Obj -> HTML Template (while rendering).
 * Parcel is the manager of Babel. It contaims the Babel that helps to convert the JSX into react element and then into JS object.
 * Babel transpile the JSX into JS object. Babel is compiler. The JSX is not understood by JS engine. So, Babel converts the JSX first into JS code and then feed it to the browser after build.
@@ -53,8 +52,8 @@
 
 #### Imp Points to be Noted
 * For loop use map,filter and reduce .
-* Unique key should be provide to child component to identify the child. Help in optimisation. If not given no error will come ony warning will come but performance will be effeceted. If not given parent will render the whole child component on any modification thus affecting the performance.
-* not using key <<< index as key <<< using unique value for key.
+* Unique key should be provide to child component to identify the child. Help in optimisation. If not given no error will come ony warning will come but performance will be effeceted. If not given, parent will render the whole child component on any modification thus affecting the performance.
+* **not using key <<< index as key <<< using unique value for key**.
 
 #### Import and Export
 * export default and export named 
@@ -76,8 +75,8 @@
 * It is React hook that get called when the component renderes itself.
 * It take one callback function and one dependencies parameter.
 * Three things to remember :-
-1. When called with no dependencies parameter -> called evertime when component renders
-2. When called with [] dependencies (empty) -> called only in starting rendering
+1. When called with no dependencies parameter -> called evertime when component renders.
+2. When called with [] dependencies (empty) -> called only in starting rendering.
 3. When called with [searchText] -> called when there is some change in searchText variable and component re-renders.
 
 ###### CORS POLICY (Cross-Origin Resource Sharing)
