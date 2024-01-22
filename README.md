@@ -97,3 +97,23 @@
 * React implement Client-side routing as it does not refresh the page and just load the specific component. Thats why is is **Single-Page Application**.
 * Dynamic Route - path: "/restaurant/:id" -> here using id specific page is load. and id is passed as parameter to route.
 * useParams() - Used to get the params passed in the dynamic route.
+
+### Class-Based Component
+* it follows the class instead of function.
+* render() -> return the JSX code to render the html part.
+* constructor() -> Normal class constructor.
+* props -> This is passed same as functional component. But in child component it is accessed using constructor(props) and calling super(props).
+* The purpose of using the super constructor with the props argument is to allow a component to inherit the properties of its parent component and also pass in additional properties as argument to the component. Using super(props) enables the child component to acces the standard properties of React component along with custom props passed from parent like name, gmail.
+* First Render Phase happens then Commit Phase occur.
+* Constructor() -> Render(render the DOM) -> DidMount(first Time called) -> DidUpdate(After any update called) -> WillUnmount(After component destroyed called) {In normal scenario}
+* Let suppose we <parent> and <child1> and <child2> class component. Then the cycle will be as follows:- P(const) -> P(render) -> C1(const) -> C1(render) -> C2(const) -> c2(render) -> C1(didMount) -> c2(didMount) -> P(didMount).
+* Why react follows this?
+    * To make the app fast. But how? React first Render everything and after that call DidMount because that will update the DOM which is expensive operation(Commit phase). Link (https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).
+
+* componentWillUnmount() -> It is generally called to clear things up like interval when component get destroyed(jsut like ngDestroy in angular).
+* How can we use the same functionality of componentWillUnmount in funcitonal component ?
+    -> By using return() function inside the useEffect() funciton.
+
+###### We can't use asyn key with useEffect but it can be used with didMount in class component.
+* Let's understand the reasons why an asynchronous callback function cannot be called directly from a useEffect() hook. This is because the useEffect hook expects its effect(or callback) function to return either a cleanup function or nothing at all. This is due to the useEffect() hook's callback function's asynchronous execution and lack of blocking. Therefore, we must follow a specific pattern if we want to call an asynchronous function inside the useEffect() hook.
+
