@@ -89,6 +89,7 @@
     border: 1px solid gray;
     margin: 10px;
     width: 230px;
+    height: 372;
     overflow-wrap: break-word;
 }
 
@@ -136,6 +137,7 @@
     margin: 10px;
     background-color: #f0f0f0;
     border: 1px solid #f0f0f0;
+    padding: 4px;
 }
 
 .shimmer-image{
@@ -147,4 +149,9 @@
 .shimmer-content{
     height: 100px;
     background-color: #cdc7c7;
+}
+
+.res-link{
+    text-decoration: none;
+    color: black;
 }

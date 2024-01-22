@@ -1,18 +1,21 @@
+import { Link } from "react-router-dom";
 import RestCard from "./restaurant-card";
-// import { listOfRestaurant } from "../utils/mock-data";
 
 const Restaurant = ({listOfRestaurant})=>{
     return (
         <div className="restaurant">
             {
                 listOfRestaurant.map(res=>(
-                    <RestCard 
-                    name={res.info.name} 
-                    cousine={res.info.cuisines} 
-                    rating={res.info.avgRating}
-                    imageId = {res.info.cloudinaryImageId}
-                    key={res.info.id}
-                     />
+                    <Link className="res-link" to={"/restaurant/"+ res.info.id} key={res.info.id}>
+                        <RestCard 
+                        name={res.info.name} 
+                        cousine={res.info.cuisines} 
+                        rating={res.info.avgRating}
+                        imageId = {res.info.cloudinaryImageId}
+                        id = {res.info.id}
+                        />
+                    </Link>
+                    
                 ))
             }
         </div>

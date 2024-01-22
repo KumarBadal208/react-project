@@ -85,3 +85,4 @@
 * It allow some cross-origin request while rejecting others.
 * Use corsproxy or some extensions to resolve this error.
 
+### Routing
