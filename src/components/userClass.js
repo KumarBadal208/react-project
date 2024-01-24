@@ -3,7 +3,6 @@ import React from "react";
 class UserClass extends React.Component{
     customProps;
     constructor(props){
-        debugger;
         super(props);
         console.log("props",this.props);
         // The purpose of using the super constructor with the props argument is to allow a component to inherit the properties of its parent component and also pass in additional properties as argument to the component.

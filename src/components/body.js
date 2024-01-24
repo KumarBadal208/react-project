@@ -2,24 +2,30 @@ import { useState, useEffect } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
 import Restaurant from "./restaurant";
 import Shimmer from "./shimmer";
-
+import UseFetchRestaurant from "../utils/useFetchRestaurant";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = ()=>{
     let [ FilteredRestaurantList, setFilteredRestaurantList ] = useState([]); // Filtered Data used for filtering and sorting
-    let [listOfRestaurant, setListOfRestaurant] = useState([]); // orginal Data
+    // let [listOfRestaurant, setListOfRestaurant] = useState([]); // orginal Data
     let [searchText, setSearchText] = useState("");
-
+    let listOfRestaurant = UseFetchRestaurant(); // hitting API and getting the restaurant data
+    let status = useOnlineStatus();
     useEffect(()=>{
-        fetchData();
-    },[]);
+        // fetchData();
+        setFilteredRestaurantList(listOfRestaurant);
+    },[listOfRestaurant]);
 
-    const fetchData = async ()=>{
-        let data = await fetch(RESTAURANT_URL);
-        const json = await data.json();
-        let resData = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-        setFilteredRestaurantList(resData);
-        setListOfRestaurant(resData);
-    }
+  
+    // let FilteredRestaurantList = JSON.parse(JSON.stringify(listOfRestaurant));
+
+    // const fetchData = async ()=>{
+    //     let data = await fetch(RESTAURANT_URL);
+    //     const json = await data.json();
+    //     let resData = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+    //     setFilteredRestaurantList(data);
+    //     setListOfRestaurant(data);
+    // }
 
     const handleChange = (event)=>{
         const val = event.target.value;
@@ -43,7 +49,11 @@ const Body = ()=>{
         setFilteredRestaurantList(filterData);
     }
 
-    if(!listOfRestaurant.length){
+    if(!status){
+        return <h1>Looks like you lost your internet. Please connect to internet</h1>;
+    }
+
+    if(!FilteredRestaurantList.length){
         return (<Shimmer/>);
     }
 

@@ -117,3 +117,6 @@
 ###### We can't use asyn key with useEffect but it can be used with didMount in class component.
 * Let's understand the reasons why an asynchronous callback function cannot be called directly from a useEffect() hook. This is because the useEffect hook expects its effect(or callback) function to return either a cleanup function or nothing at all. This is due to the useEffect() hook's callback function's asynchronous execution and lack of blocking. Therefore, we must follow a specific pattern if we want to call an asynchronous function inside the useEffect() hook.
 
+### Custom Hooks
+* We can make custom hooks of our own. It is nothing just a normal react function that will return some value which can be used in our component like making some api call in custom hooks is good, making our component code clean. It also helps in Single Responsibility Principle.
+
