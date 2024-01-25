@@ -120,3 +120,11 @@
 ### Custom Hooks
 * We can make custom hooks of our own. It is nothing just a normal react function that will return some value which can be used in our component like making some api call in custom hooks is good, making our component code clean. It also helps in Single Responsibility Principle.
 
+### Lazy Loading
+* It separated the bundle. Chunks the bundle. 
+* It does not create only one index.js for entire app rather chunk it into smaller pieces so that loading of app does not become haeavy. 
+* On demand Loading
+* We use load() for lazy loading
+* <Suspense fallback={<h1>Loading...</h1>}><Grocery/> </Suspense>
+* Lazy loading takes some time so Suspense help to show some placeholder using *fallback* and app does not crash.
+* If we lazy load Grocery then parcel will create two bundle one index and other for Grocery thus making the loading of app smooth.
