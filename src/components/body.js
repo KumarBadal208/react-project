@@ -59,11 +59,13 @@ const Body = ()=>{
 
     return (
         <div className="body">
-            <div className="filter" >
-                <input type="text" name="message" value={searchText} onChange={handleChange} className="search-box" />
+            <div className="filter flex align-middle m-4 p-4">
+                <input type="text" name="message" value={searchText} 
+                        onChange={handleChange} 
+                        className="search-box w-60 h-8 p-2 m-2 border border-solid border-black rounded-lg" />
                 <button 
                     onClick={search} 
-                    className="search-btn"
+                    className="search-btn bg-slate-500 w-36 h-8 m-2 rounded-lg"
                     >
                     Search
                 </button>
@@ -71,12 +73,12 @@ const Body = ()=>{
                     onClick={()=>{
                     let filterData = listOfRestaurant.filter(res=> res.info.avgRating>4);
                     setFilteredRestaurantList(filterData);
-                    }} className="filter-btn"
+                    }} className="filter-btn bg-slate-800 text-white h-8 m-2 px-2 rounded-lg"
                     >
                     Top Rated Restaurant
                 </button>
             </div>
-            <div className="restaurant">
+            <div className="restaurant flex">
                 <Restaurant listOfRestaurant={FilteredRestaurantList} />
             </div>
         </div>

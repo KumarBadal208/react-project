@@ -3,7 +3,7 @@ import RestCard from "./restaurant-card";
 
 const Restaurant = ({listOfRestaurant})=>{
     return (
-        <div className="restaurant">
+        <div className="restaurant flex flex-wrap">
             {
                 listOfRestaurant.map(res=>(
                     <Link className="res-link" to={"/restaurant/"+ res.info.id} key={res.info.id}>
@@ -13,6 +13,7 @@ const Restaurant = ({listOfRestaurant})=>{
                         rating={res.info.avgRating}
                         imageId = {res.info.cloudinaryImageId}
                         id = {res.info.id}
+                        className="flex"
                         />
                     </Link>
                     
