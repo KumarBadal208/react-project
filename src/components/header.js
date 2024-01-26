@@ -16,11 +16,11 @@ const Header = ()=>{
             <div className="header__nav-items flex items-center">
                 <ul className="flex align-middle m-2">
                     <li className="p-2">Online Status : {status===true ? "true" : "false"}</li>
-                    <li className="p-2"><Link to="/">home</Link></li>
-                    <li className="p-2"><Link to="/about">About Us</Link></li>
-                    <li className="p-2"><Link to="/contact">Contact Us</Link></li>
-                    <li className="p-2"><Link to="/grocery">Grocery</Link></li>
-                    <li className="p-2">profile</li>
+                    <li className="p-2 text-gray-700 font-bold"><Link to="/">home</Link></li>
+                    <li className="p-2 text-gray-700 font-bold"><Link to="/about">About Us</Link></li>
+                    <li className="p-2 text-gray-700 font-bold"><Link to="/contact">Contact Us</Link></li>
+                    <li className="p-2 text-gray-700 font-bold"><Link to="/grocery">Grocery</Link></li>
+                    <li className="p-2 text-gray-700 font-bold">profile</li>
                 </ul>
             </div>
         </div>
