@@ -128,3 +128,12 @@
 * <Suspense fallback={<h1>Loading...</h1>}><Grocery/> </Suspense>
 * Lazy loading takes some time so Suspense help to show some placeholder using *fallback* and app does not crash.
 * If we lazy load Grocery then parcel will create two bundle one index and other for Grocery thus making the loading of app smooth.
+
+#### Using Tailwind CSS to implement css
+* very efficient
+* push only the class that is being used not reductant.
+* make our css light weighted.
+
+### higher Order Component
+* It takes a component as input and return a component as output.
+* Used to modify the existing component according to some usecase.(conditions)
