@@ -9,7 +9,7 @@ const ItemCards = ({res, showIndex, setShowIndex})=>{
         setShowIndex();
     }
     return (
-        <div className=" w-2/4 my-2 border-gray-400 border-b-2 shadow-2xl">
+        <div className=" w-2/4 my-2 border-gray-400 border-b-2 shadow-2xl p-4">
             <div className="flex justify-between cursor-pointer" onClick={handleDropDown}>
                 <div className="font-bold text-gray-600">{res.card.card.title}({res.card.card.itemCards.length})</div>
                 <div>▼</div>

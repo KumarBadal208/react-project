@@ -146,5 +146,5 @@
 #### Can we change the state variable of parent from child component
 * Yes but not directly. Passing the function in props. -> 1.05 video time(see).
 
-#### Lifting the state Up
+#### Lifting the state Up (learn about this)
 * In this we lift the state of child to parent.
