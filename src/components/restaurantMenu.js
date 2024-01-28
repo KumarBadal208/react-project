@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { RESTAURANT_ID_URL } from "../utils/constant";
+// import { RESTAURANT_ID_URL } from "../utils/constant";
 import Shimmer from "./shimmer";
 import UseFetchRestaurantMenu from "../utils/useFetchRestaurantMenu";
+import ItemCards from "./ItemCards";
+import { useState } from "react";
 
 const RestaurantMenu = ()=>{
     const {resId} = useParams();
+    const [showIndex, setShowIndex] = useState(null);
     // let [resInfo, setResinfo] = useState([]);
     // let [resName, setResName] = useState("");
 
@@ -26,10 +29,17 @@ const RestaurantMenu = ()=>{
     let data = UseFetchRestaurantMenu(resId);
     console.log("res->",data);
     let resInfo = [];
+    let filteredCard = [];
     let resName = "";
     if(JSON.stringify(data) !== '{}'){
         resInfo = data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
         resName = data.cards[0].card.card.info.name;
+        let cards = data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
+        filteredCard = cards.filter(res=>{
+            if(res.card.card["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"){
+                return res;
+            }
+        });
     }
     
     if(resInfo.length===0){
@@ -38,16 +48,16 @@ const RestaurantMenu = ()=>{
     }
 
     return (
-        <div>
-            <h1>{resName}</h1>
-            <h3>Menu : </h3>
-            <ul>
-                {
-                    resInfo.map(res=>(
-                        <li key={res.card.info.id}>{res.card.info.name}</li>
-                    ))
-                }
-            </ul>
+        <div className="flex flex-col items-center w-12/12">
+            <h1 className="font-bold m-4 text-2xl text-gray-700">{resName}</h1>
+            {
+                filteredCard.map((res, index)=>(
+                    <ItemCards res={res} showIndex={index===showIndex && true}
+                    setShowIndex = {()=> setShowIndex(index)} // its a callback fn passed
+                    key = {index}
+                    />
+                ))
+            }
         </div>
     )
 };

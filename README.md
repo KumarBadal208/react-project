@@ -137,3 +137,14 @@
 ### higher Order Component
 * It takes a component as input and return a component as output.
 * Used to modify the existing component according to some usecase.(conditions)
+
+###### Install the React-dev tool extension for visualising.
+
+### Controlled Component
+* when the control of child is controlled by parent then it is called controlled.
+
+#### Can we change the state variable of parent from child component
+* Yes but not directly. Passing the function in props. -> 1.05 video time(see).
+
+#### Lifting the state Up
+* In this we lift the state of child to parent.
