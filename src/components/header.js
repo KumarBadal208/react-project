@@ -3,12 +3,15 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import { LOGO_URL } from "../utils/constant";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import {useSelector} from "react-redux";
 
 const Header = ()=>{
 
     let status = useOnlineStatus();
     const {userName} = useContext(UserContext);
 
+    const cartItems = useSelector((store)=>store.cart.items); // subscrbing the cart items
+    console.log("cart->",cartItems);
     return (
         <div className="header flex bg-gray-200 justify-between">
             <div className="header-logo ">
@@ -22,6 +25,7 @@ const Header = ()=>{
                     <li className="p-2 text-gray-700 font-bold"><Link to="/about">About Us</Link></li>
                     <li className="p-2 text-gray-700 font-bold"><Link to="/contact">Contact Us</Link></li>
                     <li className="p-2 text-gray-700 font-bold"><Link to="/grocery">Grocery</Link></li>
+                    <li className="p-2 text-gray-700 font-bold"><Link to="/cart">🛒 Cart({cartItems.length})</Link></li>
                     <li className="p-2 text-gray-700 font-bold">{userName}</li>
                 </ul>
             </div>

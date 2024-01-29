@@ -27,7 +27,6 @@ const RestaurantMenu = ()=>{
     // }
 
     let data = UseFetchRestaurantMenu(resId);
-    console.log("res->",data);
     let resInfo = [];
     let filteredCard = [];
     let resName = "";
@@ -43,7 +42,6 @@ const RestaurantMenu = ()=>{
     }
     
     if(resInfo && resInfo.length===0){
-        console.log("shimmer");
         return (<Shimmer/>)
     }
 

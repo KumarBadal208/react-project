@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
 import Header from "./header";
 import Body from "./body";
 import ABoutClass from "./about";
@@ -9,6 +10,8 @@ import Error from "./error";
 import RestaurantMenu from "./restaurantMenu";
 import Shimmer from "./shimmer";
 import UserContext from "../utils/UserContext";
+import Cart from "./Cart";
+import appStore from "../utils/appStore";
 // import Grocery from "./Grocery";
 
 const Grocery = lazy(()=> import("./Grocery"));
@@ -19,12 +22,15 @@ const AppLayout = ()=>{
         setUserName("Kumar Badal");
     },[])
     return (
-        <div>
-            <UserContext.Provider value={{userName : userName, setUserName}}>
-                <Header />
-                <Outlet/>
-            </UserContext.Provider>
-        </div>
+        <Provider store={appStore}>
+            <div>
+                <UserContext.Provider value={{userName : userName, setUserName}}>
+                    <Header />
+                    <Outlet/>
+                </UserContext.Provider>
+            </div>
+        </Provider>
+        
     )
 }
 
@@ -52,6 +58,10 @@ const route = createBrowserRouter([
             {
                 path : "/grocery",
                 element : <Suspense fallback={<Shimmer/>}><Grocery/></Suspense>
+            },
+            {
+                path : "cart",
+                element: <Cart/>
             }
         ],
         errorElement: <Error/>

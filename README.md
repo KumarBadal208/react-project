@@ -160,3 +160,16 @@
 * We can pass the function also, in the above approach.
 <UserContext.Provider value: {{userName : "kumar badal", setUserName}}></UserContext.Provider>
 Here, the setUserName can be used to update the userName.
+
+### Redux
+* use to manage the data just like context. 
+* When we click on "add to cart", redux dispatches an action which call the reducer function that updates the slice of the redux store.
+* Redux - 1. react-redux 2. redux toolkit(RTK)
+* configureStore() - configure the store
+* Provider - provide the store to use it
+* createSlice - create the slice.
+* useSelector - subscribe using it. Subscribe to specidific part of store which you are using.
+* useDispatch - to dispatch the reducer function.
+* Immer library is used to handle the immutable state in Redux.
+* RTK - either mutate the state or return the new state.
+* lean about RTK query

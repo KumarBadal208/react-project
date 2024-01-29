@@ -4,7 +4,6 @@ import ItemContent from "./ItemContent";
 const ItemCards = ({res, showIndex, setShowIndex})=>{
     const [dropDown, setDropDown] = useState(false);
     const handleDropDown = ()=>{
-        console.log("clicked");
         // setDropDown(!dropDown);
         setShowIndex();
     }

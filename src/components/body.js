@@ -80,8 +80,9 @@ const Body = ()=>{
                     >
                     Top Rated Restaurant
                 </button>
+                <label className="my-2 px-2">User Name: </label>
                 <input value={userName} onChange={(e)=> setUserName(e.target.value)}
-                        className="search-box w-60 h-8 p-2 m-2 border border-solid border-black rounded-lg" />
+                        className="search-box w-60 h-8 p-2 my-2 border border-solid border-black rounded-lg" />
             </div>
             <div className="restaurant flex">
                 <Restaurant listOfRestaurant={FilteredRestaurantList} />
