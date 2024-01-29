@@ -42,7 +42,7 @@ const RestaurantMenu = ()=>{
         });
     }
     
-    if(resInfo.length===0){
+    if(resInfo && resInfo.length===0){
         console.log("shimmer");
         return (<Shimmer/>)
     }

@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
 import Restaurant from "./restaurant";
 import Shimmer from "./shimmer";
 import UseFetchRestaurant from "../utils/useFetchRestaurant";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = ()=>{
     let [ FilteredRestaurantList, setFilteredRestaurantList ] = useState([]); // Filtered Data used for filtering and sorting
@@ -11,6 +12,8 @@ const Body = ()=>{
     let [searchText, setSearchText] = useState("");
     let listOfRestaurant = UseFetchRestaurant(); // hitting API and getting the restaurant data
     let status = useOnlineStatus();
+    const {userName, setUserName } = useContext(UserContext);
+
     useEffect(()=>{
         // fetchData();
         setFilteredRestaurantList(listOfRestaurant);
@@ -53,7 +56,7 @@ const Body = ()=>{
         return <h1>Looks like you lost your internet. Please connect to internet</h1>;
     }
 
-    if(!FilteredRestaurantList.length){
+    if(!listOfRestaurant.length){
         return (<Shimmer/>);
     }
 
@@ -77,6 +80,8 @@ const Body = ()=>{
                     >
                     Top Rated Restaurant
                 </button>
+                <input value={userName} onChange={(e)=> setUserName(e.target.value)}
+                        className="search-box w-60 h-8 p-2 m-2 border border-solid border-black rounded-lg" />
             </div>
             <div className="restaurant flex">
                 <Restaurant listOfRestaurant={FilteredRestaurantList} />

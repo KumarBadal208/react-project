@@ -148,3 +148,15 @@
 
 #### Lifting the state Up (learn about this)
 * In this we lift the state of child to parent.
+
+### React Context
+* It is used for manage the data. Act just like service.
+* To avoid props drilling , we use Context.
+* Using Context, we can create data and use it anywhere in our component. It is accessible thorughout the component. We can update it.
+* createContext() -> create Context variable
+* useContext() -> to use the context variable
+* In class-based component, we use <UserContext.Consumer>{data=>{console.log(data)}} </UserContext.Consumer> like this.
+* In app-based component, <UserContext.Provider value: {{userName : "kumar badal"}}></UserContext.Provider>
+* We can pass the function also, in the above approach.
+<UserContext.Provider value: {{userName : "kumar badal", setUserName}}></UserContext.Provider>
+Here, the setUserName can be used to update the userName.

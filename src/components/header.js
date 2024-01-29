@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { LOGO_URL } from "../utils/constant";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Header = ()=>{
 
     let status = useOnlineStatus();
-    console.log(status);
+    const {userName} = useContext(UserContext);
 
     return (
         <div className="header flex bg-gray-200 justify-between">
@@ -20,7 +22,7 @@ const Header = ()=>{
                     <li className="p-2 text-gray-700 font-bold"><Link to="/about">About Us</Link></li>
                     <li className="p-2 text-gray-700 font-bold"><Link to="/contact">Contact Us</Link></li>
                     <li className="p-2 text-gray-700 font-bold"><Link to="/grocery">Grocery</Link></li>
-                    <li className="p-2 text-gray-700 font-bold">profile</li>
+                    <li className="p-2 text-gray-700 font-bold">{userName}</li>
                 </ul>
             </div>
         </div>
