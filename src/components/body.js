@@ -62,7 +62,7 @@ const Body = ()=>{
 
     return (
         <div className="body">
-            <div className="filter flex align-middle m-4 p-4">
+            <div className="filter flex text-center justify-center align-middle m-4 p-4">
                 <input type="text" name="message" value={searchText} 
                         onChange={handleChange} 
                         className="search-box w-60 h-8 p-2 m-2 border border-solid border-black rounded-lg" />

@@ -13,13 +13,13 @@ const Header = ()=>{
     const cartItems = useSelector((store)=>store.cart.items); // subscrbing the cart items
     console.log("cart->",cartItems);
     return (
-        <div className="header flex bg-gray-200 justify-between">
+        <div className="header flex bg-gray-200 justify-between shadow-lg sticky w-full top-0">
             <div className="header-logo ">
                 <img className="w-20"
                 src={LOGO_URL}></img>
             </div>
             <div className="header__nav-items flex items-center">
-                <ul className="flex align-middle m-2">
+                <ul className="flex m-2">
                     <li className="p-2">Online Status : {status===true ? "true" : "false"}</li>
                     <li className="p-2 text-gray-700 font-bold"><Link to="/">home</Link></li>
                     <li className="p-2 text-gray-700 font-bold"><Link to="/about">About Us</Link></li>
