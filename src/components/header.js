@@ -13,7 +13,7 @@ const Header = ()=>{
     const cartItems = useSelector((store)=>store.cart.items); // subscrbing the cart items
     console.log("cart->",cartItems);
     return (
-        <div className="header flex bg-gray-200 justify-between shadow-lg sticky w-full top-0">
+        <div className="header flex bg-gray-200 justify-between shadow-lg sticky w-full top-0 z-10">
             <div className="header-logo ">
                 <img className="w-20"
                 src={LOGO_URL}></img>

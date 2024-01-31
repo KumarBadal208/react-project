@@ -34910,7 +34910,7 @@ const Header = ()=>{
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items); // subscrbing the cart items
     console.log("cart->", cartItems);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "header flex bg-gray-200 justify-between shadow-lg sticky w-full top-0",
+        className: "header flex bg-gray-200 justify-between shadow-lg sticky w-full top-0 z-10",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "header-logo ",

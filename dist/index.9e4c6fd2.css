@@ -260,6 +260,10 @@ img, video {
   top: 0;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .m-2 {
   margin: .5rem;
 }
