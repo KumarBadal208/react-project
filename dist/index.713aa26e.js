@@ -36223,7 +36223,7 @@ const UseFetchRestaurantMenu = (resId)=>{
     (0, _react.useEffect)(()=>{
         fetchData();
     }, []);
-    fetchData = async ()=>{
+    const fetchData = async ()=>{
         let data = await fetch((0, _constant.RESTAURANT_ID_URL) + resId);
         const json = await data.json();
         // let info = json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;

@@ -7,7 +7,7 @@ const UseFetchRestaurantMenu = (resId)=>{
     useEffect(()=>{
         fetchData();
     },[]);
-    fetchData = async ()=>{
+    const fetchData = async ()=>{
         let data = await fetch(RESTAURANT_ID_URL+ resId);
         const json = await data.json();
         // let info = json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
@@ -17,7 +17,6 @@ const UseFetchRestaurantMenu = (resId)=>{
         }
         setResName(json.data.cards[0].card.card.info.name);
     }
-
     return menuInfo;
 }
 
